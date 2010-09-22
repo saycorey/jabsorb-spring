@@ -1,0 +1,107 @@
+<class-diagram version="0.9.86" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.globant.spring.jabsorb.JabsorbExporterSessionListener" 
+    project="jabsorb-spring" 
+    file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/JabsorbExporterSessionListener.java" binary="false">    
+    <position x="155" y="241" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.globant.spring.jabsorb.SpringServiceFinder" 
+    project="jabsorb-spring" file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/SpringServiceFinder.java" 
+    binary="false">    
+    <position x="487" y="317" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <annotation corner="BOTTOM_RIGHT" language="java" name="com.globant.spring.jabsorb.JabsorbService" 
+    project="jabsorb-spring" file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/JabsorbService.java" 
+    binary="false">    
+    <position x="834" y="288" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </annotation>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="com.globant.spring.jabsorb.ServiceFinder" 
+    project="jabsorb-spring" file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/ServiceFinder.java" 
+    binary="false">    
+    <position x="481" y="85" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="java.lang.annotation.Annotation" project="jabsorb-spring" 
+    file="C:/Program Files/Java/jdk1.6.0_14/jre/lib/rt.jar" binary="true">    
+    <position x="821" y="118" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="javax.servlet.http.HttpSessionListener" 
+    project="jabsorb-spring" 
+    file="C:/Documents and Settings/Julian.Gutierrez/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar" 
+    binary="true">    
+    <position x="166" y="51" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <association>    
+    <source project="jabsorb-spring" name="com.globant.spring.jabsorb.JabsorbExporterSessionListener" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/JabsorbExporterSessionListener.java" binary="false" 
+      navigable="false">      
+      <attribute name="serviceFinder"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="jabsorb-spring" name="com.globant.spring.jabsorb.ServiceFinder" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/ServiceFinder.java" binary="false" 
+      navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization>    
+    <source project="jabsorb-spring" name="com.globant.spring.jabsorb.SpringServiceFinder" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/SpringServiceFinder.java" binary="false"/>    
+    <target project="jabsorb-spring" name="com.globant.spring.jabsorb.ServiceFinder" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/ServiceFinder.java" binary="false"/>  
+  </realization>  
+  <dependency>    
+    <source project="jabsorb-spring" name="com.globant.spring.jabsorb.JabsorbExporterSessionListener" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/JabsorbExporterSessionListener.java" 
+      binary="false"/>    
+    <target project="jabsorb-spring" name="com.globant.spring.jabsorb.SpringServiceFinder" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/SpringServiceFinder.java" binary="false"/>  
+  </dependency>  
+  <generalization>    
+    <source project="jabsorb-spring" name="com.globant.spring.jabsorb.JabsorbService" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/JabsorbService.java" binary="false"/>    
+    <target project="jabsorb-spring" name="java.lang.annotation.Annotation" 
+      file="C:/Program Files/Java/jdk1.6.0_14/jre/lib/rt.jar" binary="true"/>  
+  </generalization>  
+  <realization>    
+    <source project="jabsorb-spring" name="com.globant.spring.jabsorb.JabsorbExporterSessionListener" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/JabsorbExporterSessionListener.java" 
+      binary="false"/>    
+    <target project="jabsorb-spring" name="javax.servlet.http.HttpSessionListener" 
+      file="C:/Documents and Settings/Julian.Gutierrez/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar" 
+      binary="true"/>  
+  </realization>  
+  <dependency>    
+    <source project="jabsorb-spring" name="com.globant.spring.jabsorb.SpringServiceFinder" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/SpringServiceFinder.java" binary="false"/>    
+    <target project="jabsorb-spring" name="com.globant.spring.jabsorb.JabsorbService" 
+      file="/jabsorb-spring/src/main/java/com/globant/spring/jabsorb/JabsorbService.java" binary="false"/>  
+  </dependency>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
