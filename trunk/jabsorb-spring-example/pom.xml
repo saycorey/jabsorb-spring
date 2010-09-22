@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.globant.mongodb</groupId>
+	<artifactId>jabsorb-spring-example</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>Jabsorb-Spring integration</name>
+
+	<contributors>
+		<contributor>
+			<name>Julián Gutierrez Oschmann</name>
+			<email>julian.gutierrez@globant.com</email>
+			<organization>Globant</organization>
+			<organizationUrl>http://www.globant.com/</organizationUrl>
+		</contributor>
+	</contributors>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>2.5.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.globant</groupId>
+			<artifactId>jabsorb-integration</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>jabsorb-spring-example</finalName>
+		<plugins>
+			<plugin>
+				<!-- Eclipse plugin -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<!-- Eclipse server deploy. WTP configuration -->
+					<wtpversion>1.5</wtpversion>
+					<!-- Download sources -->
+					<downloadSources>true</downloadSources>
+					<!-- Download Javadocs -->
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- Compiler options -->
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<target>1.5</target>
+					<source>1.5</source>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
