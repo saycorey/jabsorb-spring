@@ -1,6 +1,6 @@
 package com.globant.jabsorb.spring;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.ServletContext;
 
 import org.jabsorb.JSONRPCBridge;
 import org.springframework.web.context.WebApplicationContext;
@@ -17,25 +17,34 @@ import com.globant.jabsorb.ServiceFinder;
  */
 public final class SpringServiceFinder implements ServiceFinder {
 
-	public void registerServices(final JSONRPCBridge bridge, final HttpSession httpSession) {
-		final WebApplicationContext ctx = findSpringContext(httpSession);
+	public void registerServices(final JSONRPCBridge bridge, final ServletContext servletContext) {
+		final WebApplicationContext ctx = findSpringContext(servletContext);
 		for (String beanName : ctx.getBeanDefinitionNames()) {
 			final Class<?> beanClass = ctx.getType(beanName);
-			if (beanClass.isAnnotationPresent(JabsorbService.class)) {
-				final JabsorbService beanMetadata = beanClass
-						.getAnnotation(JabsorbService.class);
-				final String serviceAlias = beanMetadata.getAlias();
-				final Class<?> serviceInterface = beanMetadata.getInterface();
-				final Object beanService = ctx.getBean(beanName);
-				bridge.registerObject(serviceAlias, beanService,
-						serviceInterface);
+			if (isService(beanClass)) {
+				registerBean(bridge, ctx, beanName, beanClass);
 			}
 		}
 	}
 
-	private WebApplicationContext findSpringContext(final HttpSession session) {
-		return WebApplicationContextUtils.getWebApplicationContext(session
-				.getServletContext());
+	private void registerBean(final JSONRPCBridge bridge,
+			final WebApplicationContext ctx, String beanName,
+			final Class<?> beanClass) {
+		final JabsorbService beanMetadata = beanClass
+				.getAnnotation(JabsorbService.class);
+		final String serviceAlias = beanMetadata.getAlias();
+		final Class<?> serviceInterface = beanMetadata.getInterface();
+		final Object beanService = ctx.getBean(beanName);
+		bridge.registerObject(serviceAlias, beanService,
+				serviceInterface);
+	}
+
+	private boolean isService(final Class<?> beanClass) {
+		return beanClass.isAnnotationPresent(JabsorbService.class);
+	}
+
+	private WebApplicationContext findSpringContext(final ServletContext servletContext) {
+		return WebApplicationContextUtils.getWebApplicationContext(servletContext);
 	}
 
 }

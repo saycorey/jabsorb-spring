@@ -1,5 +1,6 @@
 package com.globant.jabsorb;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
@@ -24,13 +25,13 @@ public final class JabsorbExporterSessionListener implements HttpSessionListener
 		final HttpSession session = getSession(se);
 		final JSONRPCBridge bridge = createBridge();
 		buildServiceFinder();
-		registerServices(session, bridge);
+		registerServices(session.getServletContext(), bridge);
 		registerBridge(session, bridge);
 	}
 
-	private void registerServices(final HttpSession session,
+	private void registerServices(final ServletContext servletContext,
 			final JSONRPCBridge bridge) {
-		serviceFinder.registerServices(bridge, session);
+		serviceFinder.registerServices(bridge, servletContext);
 	}
 
 	private void buildServiceFinder() {

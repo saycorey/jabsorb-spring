@@ -1,6 +1,6 @@
 package com.globant.jabsorb;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.ServletContext;
 
 import org.jabsorb.JSONRPCBridge;
 
@@ -18,6 +18,6 @@ public interface ServiceFinder {
 	 * @param httpSession
 	 * 		HTTP session.
 	 */
-	void registerServices(JSONRPCBridge bridge, HttpSession httpSession);
+	void registerServices(JSONRPCBridge bridge, ServletContext servletContext);
 
 }
