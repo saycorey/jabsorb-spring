@@ -3,7 +3,7 @@
 <script type="text/javascript" src="js/jsonrpc.js"> </script>
 
 <script type="text/javascript">
-var jsonrpc = new JSONRpcClient("/jabsorb-spring/JSON-RPC/");
+var jsonrpc = new JSONRpcClient("/jabsorb-spring-example/JSON-RPC/");
 </script>
 <body>
 <h2>Exported services</h2>

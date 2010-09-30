@@ -6,12 +6,18 @@
 	<display-name>Jabsorb Spring integration</display-name>
 
 	<listener>
-		<listener-class>com.globant.jabsorb.JabsorbExporterSessionListener</listener-class>
-	</listener>
-
-	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+
+<!--  Use this for application scoped service broker -->
+	<listener>
+		<listener-class>com.globant.jabsorb.JabsorbExporterContextListener</listener-class>
+	</listener>
+
+<!--  Use this for session scoped service broker -->
+<!--	<listener>-->
+<!--		<listener-class>com.globant.jabsorb.JabsorbExporterSessionListener</listener-class>-->
+<!--	</listener>-->
 	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
